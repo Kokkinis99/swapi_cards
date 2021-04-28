@@ -1,0 +1,43 @@
+.container {
+    background: pink;
+    background-image: linear-gradient(#00000088, #00000088), url('../../assets/container_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 20000%;   // Looks like it's connected to person container, even though they are independent
+
+    height: 5vh;
+    width: 80vw;
+    
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.searchBar {
+    position: relative;
+    width: 75%;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    
+    display: flex;
+    outline: none;
+    border: none;
+    background: none;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    color: white;
+    opacity: 50%;
+}
