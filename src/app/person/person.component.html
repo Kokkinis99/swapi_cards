@@ -7,7 +7,13 @@
 
             <div class="desc"> Height: {{people[0].height}} </div><br>
             <div class="desc"> Homeworld: {{people[0].homeworld}} </div><br>
-            <div class="desc"> Films: {{people[0].films}} </div>
+
+            <div class="desc"> Films:
+                <div *ngFor="let index of people[0].films">
+                    <div id="listItem">{{index}}</div>
+                </div>
+            </div>
+            
         </div>
     </div>
 
@@ -19,7 +25,13 @@
 
             <div class="desc"> Height: {{people[1].height}} </div><br>
             <div class="desc"> Homeworld: {{people[1].homeworld}} </div><br>
-            <div class="desc"> Films: {{people[1].films}} </div>
+            
+            <div class="desc"> Films:
+                <div *ngFor="let index of people[1].films">
+                    <div id="listItem">{{index}}</div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

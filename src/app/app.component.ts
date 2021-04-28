@@ -14,7 +14,7 @@ import { Person } from './person';
 export class AppComponent {
   title = 'angular-swapi';
   myValue = "hello";
-  person = {name: "Name", height: "Height", homeworld: "Homeworld", films: "Films"};
+  person = {name: "Name", height: "Height", homeworld: "Homeworld", films: ["Films"]};
 
   constructor(private _httpClient: HttpClient) {}
 
@@ -40,11 +40,19 @@ export class AppComponent {
       })
     ).subscribe(v => {
       this.person = v;
-      console.log(this.person);
 
-      console.log(v.homeworld);
       this._httpClient.get<{results: any[]}>(`${v.homeworld}`).
-        subscribe(v => { this.person.homeworld = v["name"] } );
+        subscribe(v => {
+          this.person.homeworld = v["name"];
+
+          for(let i in this.person.films){
+            this._httpClient.get<{results: any[]}>(`${this.person.films[i]}`).
+              subscribe(v => {
+                this.person.films[i] = v["title"];
+                console.log(this.person.films[i]);
+            });
+          }
+        } );
     });
   }
 

@@ -48,15 +48,6 @@ export class PersonComponent implements OnInit {
       this.people[this._count%2] = this._person;
     }
   }
-
-  // @Input() set person(value: Person) {
-  //   this.name = value.name;
-  //   this.height = value.height;
-  // };
-  // @Output() isReady = new EventEmitter<string>();
-
-  // private name;
-  // private height;
   constructor() { }
 
   ngOnInit() { }
